@@ -1,0 +1,8 @@
+/* home section  */
+.home, .about, .works, .form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
