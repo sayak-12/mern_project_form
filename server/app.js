@@ -5,12 +5,11 @@ const mongoose = require("mongoose");
 
 const app = express();
 dotenv.config();
-mongoose.connect(system.env.DATABASE_KEY)
+mongoose.connect(system.env.DATABASE_KEY, {useNewUrlParser: true, useUnifiedTopology: true,})
 .then(()=>{
     console.log("Succesfully connected to MongoDB");
     app.listen(3000, ()=>{
         console.log("Listening to port 3000");
     })
 });
-
 
