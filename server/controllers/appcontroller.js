@@ -4,7 +4,7 @@ const allblogs = (req, res)=>{
     Message.find().then(result=>{
         res.json(result);
     })
-    .error(err=>{
+    .catch(err=>{
         res.json({
             errormsg: "Error occured while reading data",
             error: err
