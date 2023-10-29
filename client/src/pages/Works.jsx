@@ -16,7 +16,12 @@ const Works = () => {
           }
         })
   }, [])
-  
+  const updateEntry = (id) => {
+    console.log(id);
+  }
+  const deleteEntry = (id) => {
+    console.log(id);
+  }
   return (
     <>
       <h2 className="h2 text-center mb-3 ">Our Reviews</h2>
@@ -27,7 +32,11 @@ const Works = () => {
             <div className="card-body">
               <h5 className="card-title">{rev.name}</h5>
               <p className="card-text">{rev.message}</p>
-              <p style={{fontSize: "10px",float: "right", marginBottom: "0", marginTop: "5px"}}>{moment((rev.createdAt)).fromNow()}</p>
+              <p style={{fontSize: "10px",marginBottom: "10px"}}>{moment((rev.createdAt)).fromNow()}</p>
+              <div className="d-flex justify-content-between" role="group" aria-label="Basic example">
+                <button type="button" className="btn btn-outline-success btn-sm px-2" onClick={()=>{updateEntry(rev._id)}}>update</button>
+                <button type="button" className="btn btn-danger btn-sm px-2" onClick={()=>{deleteEntry(rev._id)}}>delete</button>
+              </div>
             </div>
           </div>
         )

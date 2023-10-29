@@ -34,6 +34,10 @@ const createblog = (req,res)=>{
       })
     );
 }
+const updateBlog = (req,res) =>{
+  const id = req.params.id;
+  
+}
 module.exports = {
     allblogs, createblog
 }
