@@ -6,10 +6,12 @@ import moment from "moment";
 const Works = () => {
   const navigate = useNavigate();
   const [rev, setRev] = useState(null);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
         .get("http://localhost:3000/")
         .then((response) => {
+          setLoading(false);
           if (response.data) {
             console.log(response.data);
             if (response.data.length == 0) {
@@ -35,9 +37,10 @@ const Works = () => {
   return (
     <>
       <h2 className="h2 text-center mb-3 ">Our Reviews</h2>
+      {loading && <p className="text-center my-3">loading...</p>}
       <div className="d-flex p-4 m-3">
         
-      {!rev ? (<h2 className="h2 text-center mb-3">No messages to show</h2>): (rev && rev.map((rev) =>{
+      {rev && rev.length === 0 ? (<h2 className="h2 text-center mb-3 w-100 text-secondary">No messages to show</h2>): (rev && rev.map((rev) =>{
         return (
           <div className="card mx-2" style={{ width: "12rem" }}  key={rev._id}>
             <div className="card-body">
