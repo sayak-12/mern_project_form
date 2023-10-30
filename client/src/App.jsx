@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Works from "./pages/Works";
 import Form from "./pages/Form";
+import EditForm from "./pages/EditForm";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path={"/about"} element={<About />} />
           <Route path={"/works"} element={<Works />} />
           <Route path={"/contact"} element={<Form />} />
+          <Route path={"/edit/:id"} element={<EditForm />} />
         </Routes>
     </>
   );
