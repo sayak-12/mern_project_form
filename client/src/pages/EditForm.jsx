@@ -1,7 +1,7 @@
 import "./pagesGlobal.css";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { server_url } from "../helpers/url.js";
+import server_url from "../helpers/url.js";
 import axios from "axios";
 const EditForm = () => {
   const {id} = useParams();

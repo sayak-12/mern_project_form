@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import {Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
-import { server_url } from "../helpers/url";
+import server_url from "../helpers/url";
 const Works = () => {
   const navigate = useNavigate();
   const [rev, setRev] = useState(null);
