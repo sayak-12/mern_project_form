@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true })); // Express URL Parser
 // CORS Middleware
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://fabulous-cranachan-e21bb5.netlify.app",
     credentials: true,
   })
 );
