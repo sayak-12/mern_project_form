@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-no-target-blank */
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Works from "./pages/Works";
-import Form from "./pages/Form";
-import EditForm from "./pages/EditForm";
+import Navbar from "./components/Navbar.jsx";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Works from "./pages/Works.jsx";
+import Form from "./pages/Form.jsx";
+import EditForm from "./pages/EditForm.jsx";
 
 function App() {
   return (

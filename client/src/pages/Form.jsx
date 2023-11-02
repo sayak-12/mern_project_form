@@ -1,6 +1,6 @@
 import "./pagesGlobal.css";
 import { useState } from "react";
-import server_url from "../helpers/url";
+import server_url from "../helpers/url.js";
 import axios from "axios";
 const Form = () => {
   const [msg, setMsg] = useState({
