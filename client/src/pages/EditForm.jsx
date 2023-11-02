@@ -1,6 +1,7 @@
 import "./pagesGlobal.css";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { server_url } from "../helpers/url.js";
 import axios from "axios";
 const EditForm = () => {
   const {id} = useParams();
@@ -17,7 +18,7 @@ const EditForm = () => {
   };
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/details/${id}`)
+      .get(`${server_url}/details/${id}`)
       .then((res) => setMsg({name: res.data.name,
       message: res.data.message}));
   }, [id]);
@@ -28,7 +29,7 @@ const EditForm = () => {
     } else {
       setError(null);
       axios
-        .post(`http://localhost:3000/edit/${id}`, msg)
+        .post(`${server_url}/edit/${id}`, msg)
         .then((response) => {
           if (response.data.feedback == "Message successfully sent!") {
             setRes(response.data.feedback);

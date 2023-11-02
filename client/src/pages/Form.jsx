@@ -1,5 +1,6 @@
 import "./pagesGlobal.css";
 import { useState } from "react";
+import { server_url } from "../helpers/url";
 import axios from "axios";
 const Form = () => {
   const [msg, setMsg] = useState({
@@ -20,7 +21,7 @@ const Form = () => {
     } else {
       setError(null);
       axios
-        .post("http://localhost:3000/contact", msg)
+        .post(`${server_url}/contact`, msg)
         .then((response) => {
           if (response.data.feedback == "Message successfully sent!") {
             setRes(response.data.feedback);

@@ -3,13 +3,14 @@ import { useEffect, useState } from "react";
 import {Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
+import { server_url } from "../helpers/url";
 const Works = () => {
   const navigate = useNavigate();
   const [rev, setRev] = useState(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
-        .get("http://localhost:3000/")
+        .get(`${server_url}/`)
         .then((response) => {
           setLoading(false);
           if (response.data) {
@@ -25,7 +26,7 @@ const Works = () => {
         })
   }, [])
   const deleteEntry = (id) => {
-    axios.delete(`http://localhost:3000/delete/${id}`).then((response) => {
+    axios.delete(`${server_url}/delete/${id}`).then((response) => {
       setRev(response.data.content)
       navigate("/works");
     })
